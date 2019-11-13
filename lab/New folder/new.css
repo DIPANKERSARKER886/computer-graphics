@@ -1,0 +1,20 @@
+body {
+  background: #4F191A;
+  margin: 16px;
+}
+
+img {
+  display: none;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  padding: 10px;
+}
+.frame{
+	height: 400px;
+	width: 300px;
+}

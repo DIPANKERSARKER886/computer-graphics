@@ -1,0 +1,28 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="new.css">
+</head>
+  <body onload="draw();">
+   <canvas id="canvas" width="190" height="190"></canvas>
+   <div style="display:none;">
+     <img id="source" src="71391064_2559712184261459_8686648343448780_n.jpg" width="300" height="227">
+     <img id="frame" src="Canvas_picture_frame.jpg" width="192" height="666">
+   </div>
+ </body>
+ </body>
+ <script type="text/javascript">
+ 	
+function draw() {
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+
+  // Draw slice
+  ctx.drawImage(document.getElementById('source'),
+                0, 0, 104, 124, 21, 20, 87, 104);
+
+  // Draw frame
+  ctx.drawImage(document.getElementById('frame'), 0, 0);
+}
+ </script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8"/>
+            <title>line</title>
+            <style>
+                canvas{
+                    border:1px solid black;
+
+                }               
+            </style>
+            <script>
+                function dipu( x1, y1,  x2, y2)
+                {
+                    var canvas= document.getElementById('bn');
+                    if(canvas.getContext)
+                    {
+                       
+                        var x,y,dx,ds,dy,dt,d;
+                        var ctx = canvas.getContext('2d');
+                         x=x1;y=y1;
+                        // x1=150;x2=400;
+                         //y1=150;y2=5;
+                         dx=Math.abs(x2 - x1);
+                         dy=Math.abs(y2 - y1);
+                         dt=2*(dy-dx);
+                        ds= 2*(dy);
+                        d=(2*dy)-dx;//setP
+                        
+                        ctx.fillRect( x, y, 5, 5 );
+                        while(x<x2)
+                        {
+                            x++;
+                            if(d<0){ d=d+ds;}
+                            else {y--;d=d+dt;}
+                           // ctx.fillStyle = 'rgb(0, 0, 0)';
+                            ctx.fillRect( x, y, 5, 5 );
+                        }
+
+                    }
+
+                }
+                
+                function can()
+                {
+                    var canvas= document.getElementById('bn');
+                    var ctx = canvas.getContext('2d');
+                    ctx.fillStyle = 'rgb(0, 0, 0)';
+                    dipu(300,290,920,105);
+                    
+
+
+
+                }
+            </script>
+        </head>
+        <body onload="can();">
+            <canvas id='bn' height='600' width='1000'></canvas>
+        </body>
+    </html>

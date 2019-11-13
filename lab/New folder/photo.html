@@ -1,0 +1,44 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="new.css">
+</head>
+ <body onload="draw();">
+     <table>
+      <tr>
+        <td><img src="71391064_2559712184261459_8686648343448780_n.jpg"></td>
+        <td><img src="71391064_2559712184261459_8686648343448780_n.jpg"></td>
+        <td><img src="71391064_2559712184261459_8686648343448780_n.jpg"></td>
+        <td><img src="71391064_2559712184261459_8686648343448780_n.jpg"></td>
+      </tr>
+      <tr>
+        <td><img src="IMG_03.jpg"></td>
+        <td><img src="IMG_03.jpg"></td>
+        <td><img src="IMG_03.jpg"></td>
+        <td><img src="IMG_03.jpg"></td>
+      </tr>
+     </table>
+     <img id="frame" src="Canvas_picture_frame.jpg" width="300" height="380">
+ </body>
+ <script type="text/javascript">
+ 	
+
+ 	function draw() {
+
+ 
+  for (var i = 0; i < document.images.length; i++) {
+  
+    if (document.images[i].getAttribute('id') != 'frame') {
+      canvas = document.createElement('canvas');
+      canvas.setAttribute('width', 142);
+      canvas.setAttribute('height', 140);
+
+      document.images[i].parentNode.insertBefore(canvas,document.images[i]);
+      ctx = canvas.getContext('2d');
+      ctx.drawImage(document.images[i], 10, 16);
+      ctx.drawImage(document.getElementById('frame'), 0,0);
+    }
+  }
+}
+ </script>
+</html>
